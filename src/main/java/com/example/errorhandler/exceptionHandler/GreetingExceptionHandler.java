@@ -15,8 +15,9 @@ public class GreetingExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
 //        String bodyOfResponse = "This should be application specific";
 //        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.CONFLICT, request);
+        System.out.println("Finishing logic in exception handler");
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location", "/greeting");
+        headers.add("Location", "/arithmetic-exception");
 
         return handleExceptionInternal(ex, null, headers, HttpStatus.FOUND, request);
     }

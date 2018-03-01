@@ -14,13 +14,19 @@ public class GreetingController {
         return "greeting";
     }
 
-
+    // private page
     @RequestMapping("/user")
-    public String privatePage(Model model) {
-//        model.addAttribute("name", name);
-        return "private";
+    public String user() {
+        return "user";
     }
 
+    // private page
+    @RequestMapping("/admin")
+    public String admin() {
+        return "admin";
+    }
+
+    // do some logic and throw ArithmeticException
     @RequestMapping("/logic")
     public String errorMethod() {
         int a = 0;
@@ -28,5 +34,19 @@ public class GreetingController {
 
         return "greeting";
     }
+
+    // error pages ------------------start
+
+    @RequestMapping("/access-denied")
+    public String accessDenied() {
+        return "access-denied";
+    }
+
+    @RequestMapping("/arithmetic-exception")
+    public String arithmeticException() {
+        return "arithmetic-exception";
+    }
+
+    // ------------------------------end
 
 }
